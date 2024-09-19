@@ -1,6 +1,6 @@
-# 🎉 HumanResourceManagementSystem
+# 📂 Human Resource Management System
 
-Welcome to the **HumanResourceManagementSystem**! This project is designed to manage employee records and leave requests with robust JWT-based authentication. Below you'll find detailed setup instructions, API routes, and sample test cases. Feel free to reach out if you have any questions or need further assistance!
+Welcome to the **Human Resource Management System**! This project is designed to manage employee records and leave requests with robust JWT-based authentication. Below you'll find detailed setup instructions, API routes, and sample test cases. Feel free to reach out if you have any questions or need further assistance!
 
 ## ✨ Features
 
@@ -49,7 +49,7 @@ PORT=5000
 MONGO_URI=mongodb://localhost:27017/hrms
 JWT_SECRET=your_jwt_secret_key_here
 
-You can replace `JWT_SECRET` with any strong secret key you'd like.
+Do not forget to replace `JWT_SECRET` with any strong secret key you'd like.
 
 ### 5. Run the Application
 Once everything is set up, run the server using:
@@ -58,10 +58,10 @@ npm run dev
 The API will be up and running at `http://localhost:5000`.
 
 ### 6. Testing the API with Postman
-- Use Postman to test the routes. Make sure you generate a **JWT token** first (using the login route) and include it in the `Authorization` header when making requests.
+- I have used Postman to test the routes. Make sure you generate a **JWT token** first (using the login route) and include it in the `Authorization` header when making requests while you use Postman.
   
 ### 7. Running Unit Tests
-We’ve included tests for the employee and leave management APIs. To run the tests:
+I’ve included tests for the employee and leave management APIs. To run the tests:
 npm test
 This will execute all the tests using **Jest** and **Supertest**.
 
