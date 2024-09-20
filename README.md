@@ -22,17 +22,17 @@ This is the backend for **Human Resource Management System**. This project is de
 | ------------------- | ------------ | ------------- |
 | **Node.js**         | MongoDB      | Jest          |
 | **Express.js**      | Mongoose     | Supertest     |
-| **JSON Web Tokens** | MongoDB Atlas|               |
+| **JSON Web Tokens** | MongoDB Atlas| Mocha Chai    |
 
 ## 🔄 API Routes
 
 A variety of endpoints for both admin and employee functionalities have been used:
 
 ### 🔐 Authentication
-| Method | Route    | Description                     | Access  |
-| ------ | -------- | ------------------------------- | ------- |
-| POST   | `/login` | User login and token generation | Public  |
-| GET    | `/profile` | Get employee profile          | Employee|
+| Method | Route      | Description                     | Access  |
+| ------ | ---------- | ------------------------------- | ------- |
+| POST   | `/login`   | User login and token generation | Public  |
+| GET    | `/profile` | Get employee profile            | Employee|
 
 ### 🧑‍💼 Employee Management
 | Method | Route              | Description                    | Access |
