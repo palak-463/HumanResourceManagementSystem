@@ -1,6 +1,6 @@
-# 📂 HumanResourceManagementSystem
+# 📂 Human Resource Management System
 
-This is the backend for **Human Resource Management System**! This project is designed to help manage employee records and leave requests with secure JWT-based authentication. Whether you're an admin overseeing the team or an employee checking your profile, this system has got you covered!
+This is the backend for **Human Resource Management System**. This project is designed to help manage employee records and leave requests with secure JWT-based authentication. Whether you're an admin overseeing the team or an employee checking your profile, this system has got you covered!
 
 ## ✨ Features
 
