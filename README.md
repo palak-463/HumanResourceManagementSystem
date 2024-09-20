@@ -1,106 +1,56 @@
-# 📂 Human Resource Management System
+# 📂 HumanResourceManagementSystem
 
-Welcome to the **Human Resource Management System**! This project is designed to manage employee records and leave requests with robust JWT-based authentication. Below you'll find detailed setup instructions, API routes, and sample test cases. Feel free to reach out if you have any questions or need further assistance!
+This is the backend for **Human Resource Management System**! This project is designed to help manage employee records and leave requests with secure JWT-based authentication. Whether you're an admin overseeing the team or an employee checking your profile, this system has got you covered!
 
 ## ✨ Features
 
-- 🧑‍💼 **Employee Management**: 
-  - Admins can add, update, retrieve, and delete employee records.
-  - Employees can view their profiles.
+- 🧑‍💼 **Employee Management**:
+  - Admins can effortlessly add, update, retrieve, and delete employee records.
+  - Employees can view and manage their profiles with ease.
   
 - 🏖️ **Leave Management**:
-  - Employees can submit leave requests.
-  - Admins can approve or reject leave requests.
-  
+  - Employees can submit leave requests for approval.
+  - Admins have the power to approve or reject these leave requests.
+
 - 🔐 **JWT-based Authentication**:
   - Two roles: **Admin** and **Employee**.
-  - Role-based access control for managing employee records and leaves.
-  
+  - Role-based access control ensuring only authorized personnel can manage sensitive data.
+
 ## 🚀 Technologies Used
 
-| Backend (API)        | Database     | Testing  |
-| ---------------------| ------------ | -------- |
-| Node.js              | MongoDB      | Jest     |
-| Express.js           | Mongoose     | Supertest|
-| JSON Web Tokens (JWT)| MongoDB Atlas|          |
+| Backend             | Database     | Testing Tools |
+| ------------------- | ------------ | ------------- |
+| **Node.js**         | MongoDB      | Jest          |
+| **Express.js**      | Mongoose     | Supertest     |
+| **JSON Web Tokens** | MongoDB Atlas|               |
 
-## 🛠️ Setup Instructions
+## 🔄 API Routes
 
-Let’s get you up and running with this system!
-
-### 1. Install Node.js & MongoDB
-- First, make sure you have **Node.js** and **MongoDB** installed on your machine.
-  - [Download Node.js](https://nodejs.org/)
-  - [Download MongoDB](https://www.mongodb.com/try/download/community)
-
-### 2. Clone the Repo
-git clone <repo-url>
-cd HRMSbackend
-
-### 3. Install Dependencies
-Once you’re in the project folder, run the following to install all required packages:
-npm install
-
-### 4. Environment Variables
-Create a `.env` file in the root directory with the following content:
-
-Contents for .env:
-PORT=5000
-MONGO_URI=mongodb://localhost:27017/hrms
-JWT_SECRET=your_jwt_secret_key_here
-
-Do not forget to replace `JWT_SECRET` with any strong secret key you'd like.
-
-### 5. Run the Application
-Once everything is set up, run the server using:
-npm run dev
-
-The API will be up and running at `http://localhost:5000`.
-
-### 6. Testing the API with Postman
-- I have used Postman to test the routes. Make sure you generate a **JWT token** first (using the login route) and include it in the `Authorization` header when making requests while you use Postman.
-  
-### 7. Running Unit Tests
-I’ve included tests for the employee and leave management APIs. To run the tests:
-npm test
-This will execute all the tests using **Jest** and **Supertest**.
-
-
-### ## 🔄 API Routes
+A variety of endpoints for both admin and employee functionalities have been used:
 
 ### 🔐 Authentication
-
-| Method | Route          | Description                    | Access       |
-| ------ | -------------- | ------------------------------ | ------------ |
-| POST   | /login         | User login and token generation | Public       |
-| GET    | /profile       | Get employee profile            | Employee     |
+| Method | Route    | Description                     | Access  |
+| ------ | -------- | ------------------------------- | ------- |
+| POST   | `/login` | User login and token generation | Public  |
+| GET    | `/profile` | Get employee profile          | Employee|
 
 ### 🧑‍💼 Employee Management
-
-| Method | Route          | Description                    | Access       |
-| ------ | -------------- | ------------------------------ | ------------ |
-| GET    | /employees     | Get all employees               | Admin        |
-| POST   | /employees     | Add a new employee              | Admin        |
-| PUT    | /employees/:id | Update employee details         | Admin        |
-| DELETE | /employees/:id | Delete employee                 | Admin        |
+| Method | Route              | Description                    | Access |
+| ------ | ------------------ | ------------------------------ | ------ |
+| GET    | `/employees`       | Get all employees              | Admin  |
+| POST   | `/employees`       | Add a new employee             | Admin  |
+| PUT    | `/employees/:id`   | Update employee details        | Admin  |
+| DELETE | `/employees/:id`   | Delete employee                | Admin  |
 
 ### 🏖️ Leave Management
+| Method | Route                      | Description                   | Access   |
+| ------ | -------------------------- | ----------------------------- | -------- |
+| GET    | `/leaves`                  | View all leave requests       | Admin    |
+| POST   | `/leaves`                  | Submit a leave request        | Employee |
+| PUT    | `/leaves/:id/approve`      | Approve a leave request       | Admin    |
+| PUT    | `/leaves/:id/reject`       | Reject a leave request        | Admin    |
 
-| Method | Route                 | Description                       | Access       |
-| ------ | --------------------- | --------------------------------- | ------------ |
-| GET    | /leaves               | View all leave requests            | Admin        |
-| POST   | /leaves               | Submit a leave request             | Employee     |
-| PUT    | /leaves/:id/approve   | Approve a leave request            | Admin        |
-| PUT    | /leaves/:id/reject    | Reject a leave request             | Admin        |
+## 🎯 Bonus Features
 
-## 🧪 Sample Test Cases
-
-### Employee Management Tests
-- **Test Case 1**: Retrieve all employees as an admin.
-- **Test Case 2**: Add a new employee (Admin Only).
-- **Test Case 3**: Fail to add employee without authorization.
-
-### Leave Management Tests
-- **Test Case 1**: Employee submits a leave request.
-- **Test Case 2**: Admin approves or rejects the leave request.
-- **Test Case 3**: Unauthorized user attempts to approve a leave request.
+- 👤 **Role-based access control** ensures that employees and admins only access what they are authorized to see and manage.
+- 🛡️ **Security-focused** with JWT tokens to ensure secure access to all endpoints.
